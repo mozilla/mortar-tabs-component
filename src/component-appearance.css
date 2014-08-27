@@ -1,0 +1,24 @@
+mortar-tabs {
+  background: #efefef;
+}
+
+mortar-tab {
+  padding: 0.2rem;
+  transition: all 0.2s ease-in;
+  border: 1px solid #efefef;
+}
+
+
+mortar-tab + mortar-tab {
+  border-left: none;
+}
+
+mortar-tab[selected] {
+  background: #fff;
+}
+
+mortar-tab:hover {
+  background: #ffe;
+}
+
+

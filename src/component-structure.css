@@ -1,0 +1,8 @@
+mortar-tabs {
+  display: flex;
+}
+
+mortar-tab {
+  display: block;
+  flex: 1;
+}
