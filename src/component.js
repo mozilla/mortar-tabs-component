@@ -10,6 +10,35 @@
 
   };
 
+
+  proto.attachedCallback = function() {
+
+    var childrenTabs = this.querySelectorAll('mortar-tab');
+    var selectedChild = this.querySelector('*[selected]');
+
+    if(childrenTabs.length > 0 ) {
+
+      if(!selectedChild) {
+
+        // If no tab has the `selected` attribute, then just show the first
+        this.show(0);
+
+      } else {
+
+        // Alternatively find the first selected child and trigger `show` on it
+        for(var i = 0; i < childrenTabs.length; i++) {
+          var child = childrenTabs[i];
+          if(child === selectedChild) {
+            this.show(i);
+          }
+        }
+
+      }
+
+    }
+
+  };
+
   function deselectNode(el) {
     el.removeAttribute('selected');
   }
@@ -20,7 +49,6 @@
 
   // methods
   proto.show = function(index) {
-    console.log('show me', index);
 
     var children = this.getChildrenNodes();
     children.forEach(deselectNode);
@@ -34,9 +62,9 @@
 
   // This method links these tabs to another element that has multiple children and a 'show' method - so when clicking on the tabs we'll call the show method on that element we're linked to
   proto.attachTo = function(el) {
-    /*if(el.show !== undefined && typeof el.show === 'function') {
+    if(el.show !== undefined && typeof el.show === 'function') {
       this.attachedTo = el;
-    }*/
+    }
   };
 
   //
