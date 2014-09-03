@@ -1,0 +1,56 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+
+body {
+  height: 100%;
+  padding: 0.5rem 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  margin: 1rem 0 0.5rem 0;
+}
+
+#different {
+  font-family: 'Comic Sans', 'Comic Sans MS', 'Marker felt', sans;
+}
+
+#different mortar-tab {
+  background: #DED5CC;
+  color: #4E1908;
+  border: 1px solid #DED5CC;
+  border-top: none;
+  border-radius: 0 0 1rem 1rem;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  margin: 0 0.2rem;
+  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.35);
+
+}
+
+#different mortar-tab + mortar-tab {
+  margin-left: 0rem;
+}
+
+#different mortar-tab[selected] {
+  z-index: 1;
+  background: #F5EBE1;
+  border-color: #F5EBE1;
+  box-shadow: 0 0.25rem 0.2rem rgba(0, 0, 0, 0.3);
+}
+

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <title>mortar tabs example</title>
+    <meta name="viewport" content="width=device-width">
+
+
+    <script src="libs/platform.js"></script>
+    <script src="../src/component.js" defer></script>
+    <script src="example.js" defer></script>
+
+    <link rel="stylesheet" href="../src/component-structure.css">
+    <link rel="stylesheet" href="../src/component-appearance.css">
+    <link rel="stylesheet" href="example.css">
+  </head>
+  <body>
+
+    <h1>mortar tabs example</h1>
+
+    <h2>Nothing selected</h2>
+    
+    <p>If no tab is selected by default (by using the <tt>selected</tt> attribute in one tab), the first tab will be selected.</p>
+
+    <mortar-tabs>
+      <mortar-tab>Lorem ipsum</mortar-tab>
+      <mortar-tab>Dolor amet</mortar-tab>
+    </mortar-tabs>
+
+    <h2>Selecting second tab</h2>
+
+    <p>An example of using the <tt>selected</tt> attribute on the second tab to select it declaratively:</p>
+
+    <mortar-tabs>
+      <mortar-tab>Lorem ipsum</mortar-tab>
+      <mortar-tab selected>Dolor amet</mortar-tab>
+    </mortar-tabs>
+
+    <h2>Differently styled tabs</h2>
+
+    <p>This instance has different look and feel thanks to some CSS that overwrites the default styling. Look for the extra styles in <tt>example.css</tt></p>
+
+    <mortar-tabs id="different">
+      <mortar-tab>Lorem ipsum</mortar-tab>
+      <mortar-tab>Dolor amet</mortar-tab>
+      <mortar-tab>consectetur adipiscing elit</mortar-tab>
+    </mortar-tabs>
+
+
+  </body>
+</html>
+
