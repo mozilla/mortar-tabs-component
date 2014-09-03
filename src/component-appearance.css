@@ -1,17 +1,13 @@
 mortar-tabs {
-  background: #efefef;
+
 }
 
 mortar-tab {
   color: #888;
+  background: #efefef;
   padding: 0.2rem 0.4rem;
   transition: all 0.2s ease-in;
   border-bottom: 3px solid #ccc;
-}
-
-
-mortar-tab + mortar-tab {
-  border-left: none;
 }
 
 mortar-tab[selected] {
@@ -23,5 +19,4 @@ mortar-tab[selected] {
 mortar-tab:hover {
   background: #ffe;
 }
-
 

@@ -25,7 +25,7 @@
 
       } else {
 
-        // Alternatively find the first selected child and trigger `show` on it
+        // Alternatively, find the first selected child and trigger `show` on it
         for(var i = 0; i < childrenTabs.length; i++) {
           var child = childrenTabs[i];
           if(child === selectedChild) {
