@@ -7,7 +7,6 @@
   proto.createdCallback = function() {
     this.attachedTo = undefined;
     this.addEventListener('click', this.onClick);
-
   };
 
 
@@ -24,16 +23,16 @@
 
       if(!selectedChild) {
 
-        // If no tab has the `selected` attribute, then just show the first
-        this.show(0);
+        // If no tab has the `selected` attribute, then just select the first
+        this.select(0);
 
       } else {
 
-        // Alternatively, find the first selected child and trigger `show` on it
+        // Alternatively, find the first child with `selected` attribute and select it
         for(var i = 0; i < childrenTabs.length; i++) {
           var child = childrenTabs[i];
           if(child === selectedChild) {
-            this.show(i);
+            this.select(i);
           }
         }
 
@@ -54,14 +53,14 @@
   // Public methods ~~~
 
   // Selects the tab at position `index`
-  proto.show = function(index) {
+  proto.select = function(index) {
 
     var children = this.getChildrenNodes();
     children.forEach(deselectNode);
     selectNode(children[index]);
 
 	var ev = document.createEvent('CustomEvent');
-	ev.initCustomEvent('show', false, false, { index: index, tab: children[index] });
+	ev.initCustomEvent('select', false, false, { index: index, tab: children[index] });
 	this.dispatchEvent(ev);
 
   };
@@ -100,7 +99,7 @@
       child = children[i];
 
       if(child == target) {
-        this.show(i);
+        this.select(i);
         return;
       }
 
