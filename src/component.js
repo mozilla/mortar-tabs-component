@@ -60,19 +60,10 @@
     children.forEach(deselectNode);
     selectNode(children[index]);
 
-    /*if(this.attachedTo) {
-      this.attachedTo.show(index);
-    }*/
-	// TODO dispatch 'show' event
+	var ev = document.createEvent('CustomEvent');
+	ev.initCustomEvent('show', false, false, { index: index, tab: children[index] });
+	this.dispatchEvent(ev);
 
-  };
-
-  // This method links these tabs to another element that has multiple children and a 'show' method - so when clicking on the tabs we'll call the show method on that element we're linked to
-  proto.attachTo = function(el) {
-    /*if(el.show !== undefined && typeof el.show === 'function') {
-      this.attachedTo = el;
-    }*/
-	// TODO make el listen for 'show' event instead
   };
 
   //
