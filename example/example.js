@@ -5,6 +5,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
   tabs.addEventListener('select', onTabSelected, false);
 
+  tabs.select(0);
+
   function onTabSelected(data) {
     tabListenerOutput.innerHTML = 'Current tab: <em>' + data.detail.tab.textContent + '</em> (' + data.detail.index + ')';
   }

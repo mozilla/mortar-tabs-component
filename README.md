@@ -29,3 +29,49 @@ Now include the JS and CSS files that define the component:
 And you're ready to go!
 
 Look at the `example` for a demonstration on how to control which tab is initially selected, and overriding the tabs' default style with your own.
+
+### Methods
+
+#### `select(index)`
+
+Select tab at `index`. Example:
+
+```html
+<mortar-tabs>
+	<mortar-tab>First</mortar-tab>
+	<mortar-tab>Second</mortar-tab>
+	<mortar-tab>Third</mortar-tab>
+</mortar-tabs>
+```
+
+```javascript
+var tabs = document.querySelector('mortar-tabs');
+tabs.select(2); // select 'Third' tab (indices are 0-based)
+```
+
+### Events
+
+#### `selected`
+
+Dispatched when a tab is selected. The dispatched event contains:
+
+- `index`: index of the tab
+- `tab`: the `mortar-tab` element that was selected.
+
+```html
+<mortar-tabs>
+	<mortar-tab>First</mortar-tab>
+	<mortar-tab>Second</mortar-tab>
+	<mortar-tab>Third</mortar-tab>
+</mortar-tabs>
+```
+
+```javascript
+var tabs = document.querySelector('mortar-tabs');
+tabs.addEventListener('selected', function(ev) {
+	console.log('The tab ' + ev.detail.index + ' was selected';
+});
+tabs.select(2); // select 'Third' tab (indices are 0-based)
+```
+
+Should print: `The tab 2 was selected` to the console.
