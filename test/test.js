@@ -22,7 +22,7 @@ describe('mortar-tabs', function() {
     expect(typeof el.select).to.equal('function');
   });
 
-  it('selects the first tab when attached to the tree if no tab has the select attribute', function() {
+  it('selects the first tab when attached to the tree if no tab has the `selected` attribute', function() {
     
     var _el = el;
 
@@ -100,7 +100,6 @@ describe('mortar-tabs', function() {
     _el.select(1);
 
   });
-
 
 });
 
